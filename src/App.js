@@ -1,25 +1,52 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="Container">
+      <Imageproduct />
+      <Descriptionproduct
+        category="SNEAKERS"
+        title="White and blue nike air force 1 high"
+      />
     </div>
   );
+}
+
+function Imageproduct() {
+  return (
+    <div className="Img-shoe">
+      <img
+        src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
+        alt="image"
+        border="0"
+      />
+    </div>
+  );
+}
+
+function Descriptionproduct(props) {
+  const { category, title } = props;
+
+  return (
+    <div className="Description">
+      <h5>{category}</h5>
+      <h1>{title}</h1>
+      <h3>IDR 3.000.000</h3>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi.
+        Sed euismod, nunc ut aliquam tincidunt, nisl nunc aliquam libero, eget
+        aliquam nunc nisl sit amet nunc. Nulla facilisi. Sed euismod, nunc ut
+        aliquam tincidunt, nisl nunc aliquam libero, eget
+      </p>
+      <a href="#" className="Btn-checkout" onClick={Checkoutproduct}>
+        Checkout
+      </a>
+    </div>
+  );
+}
+
+function Checkoutproduct() {
+  return console.log("BELI WOYYY");
 }
 
 export default App;
