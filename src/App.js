@@ -38,15 +38,29 @@ function Descriptionproduct(props) {
         aliquam nunc nisl sit amet nunc. Nulla facilisi. Sed euismod, nunc ut
         aliquam tincidunt, nisl nunc aliquam libero, eget
       </p>
-      <a href="#" className="Btn-checkout" onClick={Checkoutproduct}>
+      {/* passing argument in function inline event listener*/}
+      {/* <a
+        href="#"
+        className="Btn-checkout"
+        onClick={() => console.log(`beli  ${title}`)}
+      >
+        Checkout
+      </a> */}
+
+      {/* passing argument event listener */}
+      <a
+        href="#"
+        className="Btn-checkout"
+        onClick={(e) => Checkoutproduct(title, e)}
+      >
         Checkout
       </a>
     </div>
   );
 }
 
-function Checkoutproduct() {
-  return console.log("BELI WOYYY");
+function Checkoutproduct(e) {
+  return console.log(`Beli ${e}`);
 }
 
 export default App;
